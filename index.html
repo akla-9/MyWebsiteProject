@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My DVD webstore</title>
+
+    <!-- <script src="https://use.fontawesome.com/0bad2084ce.js"></script> -->
+
+    <!-- fontawesome cdn -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    
+    <!-- my css file -->
+    <link rel="stylesheet" href="./mystyles.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="main-header">
+      <section class="top-info">
+        <div class="social-media">
+          <a href="#" class ="social-media-links">
+            <i class="fa-brands fa-facebook fa-primary-color fa-secondary-color"></i>
+          </a>
+          <a href="#" class ="social-media-links">
+            <i class="fa-brands fa-twitter fa-primary-color"></i>
+          </a>
+          <a href="#" class ="social-media-links">
+            <i class="fa-brands fa-instagram fa-primary-color" ></i>
+          </a>
+          <a href="#" class ="social-media-links">
+            <i class="fa-brands fa-linkedin fa-primary-color"></i>
+          </a>
+        </div>  
+        <div class="shipping-info">
+          <p class="header-info-display">FREE SHIPPING <span>OVER £30</span></p>
+        </div>
+        <div class="currency-lang">
+          
+          <select name="currency" id="currency">
+            <option value="ps">Pound Sterling £</option>
+            <option value="usd">US Dollar $</option>
+            <option value="euro">EUR Euro </option>
+          </select>
+
+          <select name="language" id="language">
+            <option value="eng">English</option>
+            <option value="fr">French</option>
+            <option value="spn">Spanish</option>
+          </select>
+        </div>
+      </section>
+      <section class="section-useractions">
+        <div class="logo">
+          <a href="#" class="header-logo">
+            <img src="./myfolder/images/Black Brown Elegant Boutique Round Monogram Typography Logo.png" alt="logo" width="100" height="100">
+          </a>
+        </div>  
+        <div class="search-section">
+          <input type="search" name="search-box" class="search-box">
+          <button type="submit" class="search-button">
+            <i class="fa-solid fa-magnifying-glass fa-primary-color fa-secondary-color fa-xl"></i>
+           
+          </button>
+        </div>
+
+        <div class="shopper-actions">
+          <button name="user" class="shopper-actions-icons">
+            <i class="fa-regular fa-user fa-primary-color fa-xl"></i>
+          </button>
+
+          <button name="favourites" class="shopper-actions-icons">
+            <i class="fa-regular fa-heart fa-primary-color fa-xl" ></i>
+            <span class="favourites-count">0</span>
+          </button>  
+
+          <button name ="basket"class="shopper-actions-icons  myBasket">
+            <i class="fa-solid fa-cart-shopping fa-xl"></i>
+            <span class="basket-count item-qty">0</span>
+          </button>
+        </div>
+      </section>  
+      
+      <!-- mobile bottom header -->
+      <div class="mobile-bottom-header">
+
+        <button class="action-btn" data-mobile-menu-open-btn>
+          <i name="menu-icon"></i>
+        </button>
+  
+        <button class="action-btn">
+          <i name="shopping-cart"></i>
+  
+          <span class="count">0</span>
+        </button>
+  
+        <button class="action-btn">
+          <i name="home-icon"></i>
+        </button>
+  
+        <button class="action-btn">
+          <i name="heart-icon"></i>
+  
+          <span class="count">0</span>
+        </button>
+  
+        <button class="action-btn" data-mobile-menu-open-btn>
+          <i name="grid-icon"></i>
+        </button>
+  
+      </div>
+      <!--end of mobile bottom header -->
+    </header>
+
+    <!--end of Header -->
+
+    <!-- Navbar -->
+
+    <!-- desktop navbar -->
+    <nav class="desktop-nav-container">
+        <div class="desktop-nav-menu">
+          <ul class="desktop-nav-menu-list">
+            <li class="menu-options">
+              <a href="#" class="menu-title">Home</a>
+            </li>
+            <li class="menu-options">
+              <a href="#" class="menu-title">Shop by actor</a>
+            </li>
+            <li class="menu-options">
+              <a onmouseover="myFunction()" href="#" class="menu-title  more-options">Shop by category</a>
+              <div class="dropdown-options" id="dropdown-options">
+                <ul class="dropdown-options-list">
+                  <li class="menu-dropdwon-title">
+                    <a href="#">Action</a>
+                  </li>
+                  <li class="menu-dropdwon-title">
+                    <a href="#">Comedy</a>
+                  </li>
+                  <li class="menu-dropdwon-title">
+                    <a href="#">Children</a>
+                  </li>
+                  <li class="menu-dropdwon-title">
+                    <a href="#">Comedy</a>
+                  </li>
+                  <li class="menu-dropdwon-title">
+                    <a href="#">Drama</a>
+                  </li>
+                  <li class="menu-dropdwon-title">
+                    <a href="#">Documentary</a>
+                  </li>
+                  <li class="menu-dropdwon-title">
+                    <a href="#">Animated</a>
+                  </li>
+                  <li class="menu-dropdwon-title">
+                    <a href="#">Martial Arts</a>
+                  </li>
+                  <li class="menu-dropdwon-title">
+                    <a href="#">Military/War</a>
+                  </li>
+                  <li class="menu-dropdwon-title">
+                    <a href="#">Musicals</a>
+                  </li>
+                  <li class="menu-dropdwon-title">
+                    <a href="#">Romance</a>
+                  </li>
+                  <li class="menu-dropdwon-title">
+                    <a href="#">Sci-Fi</a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li class="menu-options">
+              <a href="#" class="menu-title">Special offers</a>
+            </li>
+            <li class="menu-options">
+              <a href="#" class="menu-title">Extra</a>
+            </li>
+          </ul>         
+        </div>
+        
+    </nav>
+     <!-- end of desktop navbar -->
+
+     <!-- mobile navbar -->
+    <nav class="mobile-nav-container  with-scrollbar">
+        <div class="top-menu-line">
+          <h2 class="menu-title">Menu</h2>
+    
+          <button class="menu-close-btn" data-mobile-menu-close-btn>
+            <i name="close-icon"></i>
+          </button>
+        </div>
+        
+        <ul class="mobile-nav-menu-list">
+            <li class="menu-options">
+                <a href="#" class="menu-title">Home</a>
+            </li>
+            <li class="menu-options">
+              <button class="further-menu">
+                <p class="menu-title">Shop by category</p>
+                <div>
+                  <i name="plus-sign" class="plus-icon"></i> 
+                  <i name="minus-sign" class="minus-icon"></i>      
+                </div>
+
+              </button>
+
+              <ul class="submenu-category-list">
+                <li class="submenu-category">
+                  <a href="#" class="submenu-title">Action</a>
+                </li>
+      
+                <li class="submenu-category">
+                  <a href="#" class="submenu-title">Comedy</a>
+                </li>
+      
+                <li class="submenu-category">
+                  <a href="#" class="submenu-title">Children</a>
+                </li>
+      
+                <li class="submenu-category">
+                  <a href="#" class="submenu-title">Drama</a>
+                </li>
+                <li class="submenu-category">
+                  <a href="#" class="submenu-title">Documentary</a>
+                </li>
+        
+                <li class="submenu-category">
+                  <a href="#" class="submenu-title">Animated</a>
+                </li>
+        
+                <li class="submenu-category">
+                  <a href="#" class="submenu-title">Martial Arts</a>
+                </li>
+        
+                <li class="submenu-category">
+                  <a href="#" class="submenu-title">Military/War</a>
+                </li>
+                 <li class="submenu-category">
+                  <a href="#" class="submenu-title">Musicals</a>
+                </li>
+      
+                <li class="submenu-category">
+                  <a href="#" class="submenu-title">Romance</a>
+                </li>
+      
+                <li class="submenu-category">
+                  <a href="#" class="submenu-title">Sci-Fi</a>
+                </li>
+                      
+              </ul>
+            </li>  
+
+        </ul>         
+        
+        
+    </nav>
+    <!--end of mobile navbar -->
+
+    <!-- end of Navbar -->
+
+    <main>
+      <!-- Hero -->
+      <section class="hero">
+        <div class="banner">
+          <div class="slideshow-container">
+
+            <div class="mySlides fade">
+              <div class="numbertext">1 / 3</div>
+              <img src="/myfolder/images/product-2.jpeg" style="width:100%">
+              <div class="text">Caption Text</div>
+            </div>
+            
+            <div class="mySlides fade">
+              <div class="numbertext">2 / 3</div>
+              <img src="/myfolder/images/product-5.jpeg" style="width:100%">
+              <div class="text">Caption Two</div>
+            </div>
+            
+            <div class="mySlides fade">
+              <div class="numbertext">3 / 3</div>
+              <img src="/myfolder/images/product-6.jpeg" style="width:100%">
+              <div class="text">Caption Three</div>
+            </div>
+            
+          </div>
+          <br>
+            
+          <div style="text-align:center">
+            <span class="dot"></span> 
+            <span class="dot"></span> 
+            <span class="dot"></span> 
+          </div>
+            
+          <h1>LATEST ARRIVAL</h1>
+          <button>BUY NOW</button>
+        </div>
+      </section>
+      <!--end of Hero -->
+
+      <!-- grid -->
+      <section class="movie-grid">
+        <h2 class="section-title">Our Collection</h2>
+        <div class="movies-display">
+          <!-- single dvd product -->
+          
+          <!-- <article class="movie">
+            <div class="image-container">
+              <img src="./myfolder/images/Retro-Color-Palettes5.webp" alt="" class="image-in-grid">
+              <button class="cart-button" data-id="1">
+                <i class="fas fa-shopping-cart"></i>
+                add to bag
+              </button>
+            </div>
+            <h3>ali baba</h3>
+            <h4>£10.00</h4>
+          </article>
+
+          <article class="movie">
+            <div class="image-container">
+              <img src="./myfolder/images/Retro-Color-Palettes5.webp" alt="" class="image-in-grid">
+              <button class="cart-button" data-id="1">
+                <i class="fas fa-shopping-cart"></i>
+                add to bag
+              </button>
+            </div>
+            <h3>ali baba</h3>
+            <h4>£10.00</h4>
+          </article>
+
+          <article class="movie">
+            <div class="image-container">
+              <img src="./myfolder/images/Retro-Color-Palettes5.webp" alt="" class="image-in-grid">
+              <button class="cart-button" data-id="1">
+                <i class="fas fa-shopping-cart"></i>
+                add to bag
+              </button>
+            </div>
+            <h3>ali baba</h3>
+            <h4>£10.00</h4>
+          </article> 
+     -->
+        
+          
+        </div>
+
+  
+      </section>
+      <!--end of grid -->
+
+      <!-- shopping cart -->
+        
+      <div class="cart-folder">
+        <div class="cart">
+          <span class="close-cart">
+            <i class ="fas fa-window-close"></i>
+          </span>
+          <h2>Your cart</h2>
+          <div class="cart-content">
+              <!--cart items  -->
+             
+              </div>
+
+              <!--end of cart items  -->
+
+              <div class="cart-footer">
+                <h3>your total:£ <span class="cart-total">54</span></h3>
+                <button class="clear-cart cart-folderc-button">Clear cart</button>
+              </div>
+          </div>
+
+        </div>
+      </div>  
+
+       <!--end of shopping cart -->
+
+
+
+
+
+
+
+    </main>
+
+    <!-- footer -->
+    <footer class="main-footer">
+      <div class="logo-footer">
+        <h3>Movies for life</h3>
+      </div>
+      <div class="pay-social-footer">
+        <p>Pay securely with</p>
+        <i class="fa-brands fa-cc-mastercard"></i>
+        <i class="fa-brands fa-cc-visa"></i>
+      </div>
+      <div class="link-footer">
+        <div class="sub-div-1">
+          <div class="title">Help & Information</div>
+          <div class="sub-div">Contact Us</div>
+          <div class="sub-div">Track my order</div>
+          <div class="sub-div">Returns</div>
+          <div class="sub-div">International Delivery</div>
+          <div class="sub-div">Help Page</div>
+          <div class="sub-div">Cookie Settings</div>
+        </div>  
+        <div class="sub-div-2">
+          <div class="title">Loyalty & Reward</div>
+          <div class="sub-div">Discounts</div>
+          <div class="sub-div">Voucher Codes</div>
+          
+        </div> 
+        <div class="sub-div-3">
+          <div class="title">Company Information</div>
+          <div class="sub-div">About Us</div>
+          <div class="sub-div">Terms and Conditions</div>
+          <div class="sub-div">Privacy Policy</div>
+          <div class="sub-div">Cookie Policy</div>
+          <div class="sub-div">International Delivery</div>
+         
+        </div>   
+      </div>
+      <div class="copyright-footer"> 
+        <h5>© 2022 Movies for Life Limited. All rights reserved.</h5>
+      </div>
+    </footer>
+    <!-- end of footer -->
+
+
+    <script src="./myscript.js"></script>
+</body>
+</html>
