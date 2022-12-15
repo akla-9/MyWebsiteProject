@@ -64,14 +64,15 @@ button {
 body{
   display: flex;
   flex-direction: column;
-  min-height:100%;
+  min-height: 100vh;
 }
 
 /* Header */
 
 .main-header {
-  position: fixed;
-  /* top:0; */
+  position: relative;
+  top:0;
+  left:0;
   width:100%;
   min-width:868px;
   height: 10rem;
@@ -91,6 +92,9 @@ body{
 
 }
 
+svg{
+
+}
 .top-info {
   width:100%;
   height: 20%;
@@ -132,7 +136,7 @@ body{
 .social-media-links, .shopper-actions-icons, .fa-magnifying-glass {
   color:var(--darkBrown);
   margin:0.2rem;
-
+  background-color: transparent;
 }
 
 
@@ -223,7 +227,9 @@ text-align:calc();
   background-size:cover;
 }
 
-
+h2.section-title {
+  color:var(--ligthYellow)
+}
 
 /* movie collection grid */
 
@@ -334,7 +340,7 @@ article.movie h4{
   width: 100%;
   height: 100%;
   transition: var(--mainTransition);
-  background: var(--ligthYellow);
+  /* background: var(--ligthYellow);  */
   z-index: 2;
   visibility: hidden; 
 }
@@ -346,7 +352,7 @@ article.movie h4{
   height: 100%;
   overflow: scroll;
   z-index: 3;
-  background: var(--whiteIsh);
+  background:var(--ligthYellow);
   padding: 1.5rem;
   transition: var(--mainTransition);
   transform: translateX(100%); 
@@ -368,13 +374,25 @@ article.movie h4{
   font-size: 1.7rem;
   cursor: pointer;
 }
+
+.clear-cart{
+  padding:1rem;
+  border-radius: 60px;
+  background: rgba(255,255,255,0.2); 
+  backdrop-filter: blur(4px) saturate(160px);
+  font-weight: 500;
+  text-transform:uppercase
+  
+
+}
 .cart h2 {
-  text-transform: capitalize;
+  text-transform:uppercase;
   text-align: center;
   letter-spacing: var(--mainSpacing);
   margin-bottom: 2rem;
+  color:var(--darkPurple)
 }
-/*---------- Cart Item -------------------- */
+/*Items in the cart*/
 .cart-item {
   display: grid;
   align-items: center;
@@ -399,23 +417,25 @@ article.movie h4{
   text-align: center;
 }
 .remove-item {
-  color:var(--lightGrey);
+  color:var(--lightOrange);
   cursor: pointer;
+  font-weight: 500;
 }
 .fa-chevron-up,
 .fa-chevron-down {
-  color: var(--primaryColor);
+  color: var(--darkPurple);
   cursor: pointer;
 }
 /*---------- End of Cart Item -------------------- */
 
 .cart-footer {
-  margin-top: 2rem;
+  margin-top: auto 2rem;
   letter-spacing: var(--mainSpacing);
   text-align: center;
+
 }
 .cart-footer h3 {
-  text-transform: capitalize;
+  text-transform:uppercase;
   margin-bottom: 1rem;
 }
 
@@ -449,8 +469,8 @@ article.movie h4{
 /* desktop navbar */
 
 nav {
-  position: sticky;
-  top: calc(128px + 0px);
+  position:initial;
+  top: calc(128px + 30px);
   background: var(--gradient);
   
 }
@@ -561,8 +581,6 @@ nav {
   margin-top: auto;
   display:flex;
   flex-direction: column;
- 
- 
   background: var(--ligthYellow);
   color:var(--whiteIsh);
 }

@@ -187,7 +187,7 @@ class Mydisplay {
   addItemToCart(item){
     const div = document.createElement('div');
           div.classList.add('cart-items');
-          div.innerHTML =`<img src=${item.image} alt="movie-front-image">      
+          div.innerHTML =`<img src=${imageURL+item.poster_path} alt="movie-front-image">      
             <div>
              <h4>${item.title}</h4>
              <h5>£${item.price}</h5>
