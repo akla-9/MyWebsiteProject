@@ -1,4 +1,4 @@
-
+// https://api.themoviedb.org/3/genre/movie/list
 
 //My API TMDB the movie database api
 
@@ -9,33 +9,8 @@ const imageURL = 'https://image.tmdb.org/t/p/w500';
 const searchURL = baseaddress +'/search/movie?'+APIkey;
 
 const main = document.getElementById('main');
-const form = document.getElementById('form');
-const search = document.getElementById('search');
-
-
-
-
-// Slideshow
-let slideIndex = 0;
-showSlides();
-
-function showSlides() {
-  let i;
-  let slides = document.getElementsByClassName("mySlides");
-  let dots = document.getElementsByClassName("dot");
-  for (i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";  
-  }
-  slideIndex++;
-  if (slideIndex > slides.length) {slideIndex = 1}    
-  for (i = 0; i < dots.length; i++) {
-    dots[i].className = dots[i].className.replace(" active", "");
-  }
-  slides[slideIndex-1].style.display = "block";  
-  dots[slideIndex-1].className += " active";
-  setTimeout(showSlides, 2000); // Change image every 2 seconds
-}
-// end of slidshow
+const searchButton = document.querySelector('.search-button');
+const searchBox = document.querySelector('.search-box');
 
 
 // // Dropdown menu 
@@ -89,55 +64,60 @@ let shopAddButtons = [];
 //defining classes
 
 //getting the movies
+// getProducts(apiurl)
+
 class Products {
   async getProducts(){
-  try{
-    let result = await fetch('myfilms.json')
-    let data = await result.json();
-    let movies = data.items;
-    console.log(movies);
-    movies =movies.map(item =>{
-      const {title, price} = item.fields;
-      const {id} = item.sys;
-      const image = item.fields.image.fields.file.url;
-      return {title,price,id,image}
+    try{
+        let result = await fetch(apiurl)
+        let data = await result.json();
+        let movies = data.results;
+        console.log(movies)
+        movies = movies.map(item =>{
+          const {title,poster_path,id,vote_average, release_date,overview}= item;
+        //   const {title, price} = item.fields;
+        //   const {id} = item.sys;
+        //   const image = item.fields.image.fields.file.url;
+          return {title,id,poster_path}
     
-
-    })
-    console.log(movies);
-    return movies;
-    
-  } 
-  catch(error) {
-    console.log(error)
-  }
+        })
+        // console.log(movies);
+        return movies;
+        
+      } 
+      
+      catch(error) {
+        console.log(error)
+      }
  }
 }
 
 // displaying the products
 class Mydisplay {
-  displayMovies(products){
-    console.log(products)
-    let result ="";
-    products.forEach(dvd =>{
-        result +=`
-        <article class="movie">
-            <div class="image-container">
-              <img class="dvd-image" src= ${dvd.image}>
-              <button type ="submit" class="cart-button" data-id= ${dvd.id}>
-                <i class="fas fa-shopping-cart"></i>
-                Add to cart
-              </button>
-            </div>
-            <h3>${dvd.title}</h3>
-            <h4>£${dvd.price}</h4>
-          </article>
 
-        `
-        // console.log(dvd)
-    })
-    myMoviesDisplay.innerHTML = result;
-  }
+        displayMovies(products){
+        console.log()
+        let result ="";
+        products.forEach(dvd =>{
+            result +=`
+            <article class="movie">
+                <div class="image-container">
+                  <img class="dvd-image" src= ${imageURL+dvd.poster_path}>
+                  <button type ="submit" class="cart-button" data-id= ${dvd.id}>
+                    <i class="fas fa-shopping-cart"></i>
+                    Add to cart
+                  </button>
+                </div>
+                <h3>${dvd.title}</h3>
+                <h3 class="dvd-id">${dvd.id}</h3>
+                <h4>£${dvd.price}</h4>
+              </article>
+    
+            `
+            // console.log(dvd)
+        })
+        myMoviesDisplay.innerHTML = result;
+      }
 
 
 
@@ -349,13 +329,13 @@ document.addEventListener('DOMContentLoaded',()=>{
 
     const mydisplay = new Mydisplay();
     const products = new Products();
-    console.log(products)
+    // console.log(products);
     //set site up
     mydisplay.setSiteUp();
 
     //get all products
     // products.getProducts().then(movies => console.log(movies));
-        products.getProducts().then(movies => {
+    products.getProducts().then(movies => {
         mydisplay.displayMovies(movies);
         Storage.saveDvdProduct(movies);
        }).then(()=> {
@@ -364,4 +344,18 @@ document.addEventListener('DOMContentLoaded',()=>{
 
     });
 
+  // searchButton.addEventListener('submit',(e)=>{
+  //   e.preventDefault();
+
+  //   const searchBoxValue =searchBox.value;
+  //   if(searchBoxValue){
+  //     products.getProducts(searchURL+'&query='+searchTerm)
+  //   }
+  //   else{
+  //     products.getProducts(apiurl);
+  //   }
+  // })
+    
+
 })
+
